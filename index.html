@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tra cứu hóa đơn nhà thuốc</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+      color: #0066cc;
+    }
+    .code {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 16px 0;
+      text-align: center;
+    }
+    .warning {
+      color: red;
+      text-align: center;
+    }
+    .info {
+      margin-top: 24px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tra cứu hóa đơn nhà thuốc</h1>
+  <div id="content"></div>
+
+  <div class="info">
+    <p>
+      Đây là trang tra cứu hóa đơn demo chạy trên GitHub Pages.<br>
+      Mã hóa đơn được lấy từ tham số <code>?code=...</code> trên đường dẫn.
+    </p>
+    <p>
+      Sau này bạn có thể kết nối đến API / server thật để hiển thị đầy đủ thông tin
+      (tên thuốc, số lượng, tổng tiền...).
+    </p>
+  </div>
+
+  <script>
+    // Lấy query string: ?code=....
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+
+    const contentDiv = document.getElementById("content");
+
+    if (!code) {
+      contentDiv.innerHTML = '<p class="warning">Không tìm thấy mã hóa đơn trong đường dẫn.</p>' +
+        '<p class="warning">Vui lòng kiểm tra lại QR hoặc liên hệ nhà thuốc.</p>';
+    } else {
+      contentDiv.innerHTML = `
+        <div class="code">Mã hóa đơn: ${code}</div>
+        <p style="text-align:center;">Vui lòng cung cấp mã này cho nhân viên để tra cứu chi tiết.</p>
+      `;
+    }
+  </script>
+</body>
+</html>
