@@ -1,1 +1,25 @@
+{
+  "code": "HD202502141854",
+  "date": "2025-02-14",
+  "time": "18:54",
+  "customer": "Khách lẻ",
+  "staff": "Khang Lê",
+  "items": [
+    {
+      "name": "Paracetamol 500mg",
+      "unit": "vỉ",
+      "quantity": 2,
+      "unitPrice": 21000,
+      "total": 42000
+    },
+    {
+      "name": "Vitamin C",
+      "unit": "hộp",
+      "quantity": 1,
+      "unitPrice": 35000,
+      "total": 35000
+    }
+  ],
+  "totalAmount": 77000
+}
 
