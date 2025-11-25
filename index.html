@@ -1,69 +1,85 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <title>Tra cứu hóa đơn nhà thuốc</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 16px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    h1 {
-      text-align: center;
-      color: #0066cc;
-    }
-    .code {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 16px 0;
-      text-align: center;
-    }
-    .warning {
-      color: red;
-      text-align: center;
-    }
-    .info {
-      margin-top: 24px;
-      font-size: 14px;
-      color: #555;
-    }
-  </style>
+<meta charset="UTF-8" />
+<title>Tra cứu hóa đơn</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fafafa;
+}
+h1 {
+    text-align: center;
+    color: #0066cc;
+}
+.code {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-align: center;
+}
+.info {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.label {
+    font-weight: bold;
+}
+</style>
+
 </head>
 <body>
-  <h1>Tra cứu hóa đơn nhà thuốc</h1>
-  <div id="content"></div>
 
-  <div class="info">
-    <p>
-      Đây là trang tra cứu hóa đơn demo chạy trên GitHub Pages.<br>
-      Mã hóa đơn được lấy từ tham số <code>?code=...</code> trên đường dẫn.
-    </p>
-    <p>
-      Sau này bạn có thể kết nối đến API / server thật để hiển thị đầy đủ thông tin
-      (tên thuốc, số lượng, tổng tiền...).
-    </p>
-  </div>
+<h1>Tra cứu hóa đơn nhà thuốc</h1>
 
-  <script>
-    // Lấy query string: ?code=....
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get("code");
+<div id="content">
+    Đang tải dữ liệu...
+</div>
 
-    const contentDiv = document.getElementById("content");
+<script>
+// Lấy mã hóa đơn từ URL: ?code=HD202511260312
+const urlParams = new URLSearchParams(window.location.search);
+const code = urlParams.get("code");
 
-    if (!code) {
-      contentDiv.innerHTML = '<p class="warning">Không tìm thấy mã hóa đơn trong đường dẫn.</p>' +
-        '<p class="warning">Vui lòng kiểm tra lại QR hoặc liên hệ nhà thuốc.</p>';
-    } else {
-      contentDiv.innerHTML = `
-        <div class="code">Mã hóa đơn: ${code}</div>
-        <p style="text-align:center;">Vui lòng cung cấp mã này cho nhân viên để tra cứu chi tiết.</p>
-      `;
-    }
-  </script>
+// Vị trí file JSON
+const jsonUrl = `invoices/${code}.json`;
+
+if (!code) {
+    document.getElementById("content").innerHTML =
+        "<p>Không tìm thấy mã hóa đơn.</p>";
+} else {
+    fetch(jsonUrl)
+        .then(res => {
+            if (!res.ok) throw new Error("Không tìm thấy hóa đơn");
+            return res.json();
+        })
+        .then(data => {
+            document.getElementById("content").innerHTML = `
+                <p class="code">Mã hóa đơn: ${data.code}</p>
+                <div class="info">
+                    <p><span class="label">Ngày: </span> ${data.date}</p>
+                    <p><span class="label">Giờ: </span> ${data.time}</p>
+                    <p><span class="label">Khách hàng: </span> ${data.customer}</p>
+                    <hr>
+                    <p><span class="label">Tổng tiền: </span> ${data.total}</p>
+                </div>
+            `;
+        })
+        .catch(err => {
+            document.getElementById("content").innerHTML =
+                "<p>Không tìm thấy hóa đơn.</p>";
+        });
+}
+</script>
+
 </body>
 </html>
