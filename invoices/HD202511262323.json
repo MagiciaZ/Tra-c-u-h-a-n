@@ -4,14 +4,6 @@
   "time": "23:23",
   "cashier": "Khang Lê",
   "customer": "",
-  "items": [
-    {
-      "name": "saiyanjin",
-      "unit": "",
-      "quantity": 1,
-      "price": 23000,
-      "total": 23000
-    }
-  ],
-  "total": 23000
+  "items": [],
+  "total": 0
 }
