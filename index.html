@@ -88,7 +88,7 @@ if (!code) {
             const formatMoney = (amount) => {
                 return new Intl.NumberFormat('vi-VN', {
                     style: 'currency',
-                    currency: 'VND'
+                    currency: 'đ'
                 }).format(amount);
             };
 
@@ -118,8 +118,8 @@ if (!code) {
                             <td>${item.name}</td>
                             <td style="text-align: center;">${item.unit || ''}</td>
                             <td style="text-align: center;">${item.quantity}</td>
-                            <td style="text-align: right;">${item.price.toLocaleString('vi-VN')} VND</td>
-                            <td style="text-align: right;">${item.total.toLocaleString('vi-VN')} VND</td>
+                            <td style="text-align: right;">${item.price.toLocaleString('vi-VN')} đ</td>
+                            <td style="text-align: right;">${item.total.toLocaleString('vi-VN')} đ</td>
                         </tr>
                     `;
                 });
@@ -140,7 +140,7 @@ if (!code) {
                     <hr>
                     ${itemsHTML}
                     <hr>
-                    <p style="font-size: 18px; text-align: right;"><span class="label">Tổng cộng:</span> <strong>${data.total.toLocaleString('vi-VN')} VND</strong></p>
+                    <p style="font-size: 18px; text-align: right;"><span class="label">Tổng cộng:</span> <strong>${data.total.toLocaleString('vi-VN')} đ</strong></p>
                 </div>
             `;
         })
