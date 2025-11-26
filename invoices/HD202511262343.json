@@ -1,0 +1,17 @@
+{
+  "code": "HD202511262343",
+  "date": "26/11/2025",
+  "time": "23:43",
+  "cashier": "Khang Lê",
+  "customer": "",
+  "items": [
+    {
+      "name": "omgg",
+      "unit": "",
+      "quantity": 1,
+      "price": 21000,
+      "total": 21000
+    }
+  ],
+  "total": 21000
+}
