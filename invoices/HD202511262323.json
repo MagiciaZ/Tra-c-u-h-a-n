@@ -1,9 +1,17 @@
 {
   "code": "HD202511262323",
   "date": "26/11/2025",
-  "time": "23:23",
+  "time": "23:26",
   "cashier": "Khang Lê",
   "customer": "",
-  "items": [],
-  "total": 0
+  "items": [
+    {
+      "name": "saiyanjin",
+      "unit": "",
+      "quantity": 1,
+      "price": 23000,
+      "total": 23000
+    }
+  ],
+  "total": 23000
 }
