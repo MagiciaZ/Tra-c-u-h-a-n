@@ -73,14 +73,10 @@ if (!code) {
     document.getElementById("content").innerHTML =
         '<p class="error">Không tìm thấy mã hóa đơn trong URL.</p>';
 } else {
-
-    // 🔥 Thêm tham số chống cache + yêu cầu không dùng cache
-    const antiCache = Date.now(); // số mili-giây hiện tại
-    const jsonUrl = `./invoices/${code}.json?ts=${antiCache}`;
-
-    fetch(jsonUrl, {
-        cache: "no-store"
-    })
+    // ✅ Sửa đường dẫn: thêm ./ hoặc dùng đường dẫn tuyệt đối
+    const jsonUrl = `./invoices/${code}.json`;
+    
+    fetch(jsonUrl)
         .then(res => {
             if (!res.ok) {
                 throw new Error(`HTTP error! status: ${res.status}`);
@@ -144,10 +140,7 @@ if (!code) {
                     <hr>
                     ${itemsHTML}
                     <hr>
-                    <p style="font-size: 18px; text-align: right;">
-                        <span class="label">Tổng cộng:</span>
-                        <strong>${data.total.toLocaleString('vi-VN')} đ</strong>
-                    </p>
+                    <p style="font-size: 18px; text-align: right;"><span class="label">Tổng cộng:</span> <strong>${data.total.toLocaleString('vi-VN')} đ</strong></p>
                 </div>
             `;
         })
