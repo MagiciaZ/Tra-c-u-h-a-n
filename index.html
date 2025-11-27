@@ -5,75 +5,218 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tra cứu hóa đơn</title>
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 30px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background: #fafafa;
 }
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
 h1 {
-    text-align: center;
-    color: #0066cc;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
-.code {
+
+.invoice-code {
     font-size: 20px;
-    font-weight: bold;
-    margin: 20px 0;
-    text-align: center;
-}
-.info {
-    margin-top: 20px;
-    padding: 15px;
-    background: #fff;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px 20px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    display: inline-block;
 }
-.label {
-    font-weight: bold;
+
+.content {
+    padding: 30px;
 }
-.loading {
-    text-align: center;
-    color: #666;
+
+.info-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
 }
-.error {
-    color: #cc0000;
-    text-align: center;
+
+.info-row {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
 }
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #555;
+    width: 120px;
+}
+
+.info-value {
+    color: #333;
+    flex: 1;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 25px 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0066cc;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
 }
-table th, table td {
-    border: 1px solid #ddd;
-    padding: 10px 8px;
-    text-align: left;
-}
+
 table th {
-    background-color: #e6f2ff;
-    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 14px 10px;
     text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+table td {
+    padding: 14px 10px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+}
+
+table tbody tr:hover {
+    background-color: #f5f7ff;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.money-cell {
+    text-align: right;
+    font-weight: 500;
+    color: #0066cc;
+}
+
+.total-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 25px;
+    text-align: right;
+}
+
+.total-label {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.total-amount {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 16px;
+}
+
+.loading {
+    color: #666;
+}
+
+.error {
+    color: #cc0000;
+}
+
+.footer-note {
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+    }
+    
+    h1 {
+        font-size: 22px;
+    }
+    
+    .invoice-code {
+        font-size: 16px;
+    }
+    
+    table {
+        font-size: 13px;
+    }
+    
+    table th, table td {
+        padding: 10px 6px;
+    }
 }
 </style>
 </head>
 <body>
-<h1>Tra cứu hóa đơn nhà thuốc</h1>
-<div id="content">
-    <p class="loading">Đang tải dữ liệu...</p>
+<div class="container">
+    <div class="header">
+        <h1>🏥 Tra cứu hóa đơn nhà thuốc</h1>
+        <div class="invoice-code" id="invoice-code-display">Đang tải...</div>
+    </div>
+    
+    <div class="content" id="content">
+        <p class="loading">⏳ Đang tải dữ liệu...</p>
+    </div>
 </div>
+
 <script>
-// Lấy mã hóa đơn từ URL: ?code=HD202511260312
 const urlParams = new URLSearchParams(window.location.search);
 const code = urlParams.get("code");
 
 if (!code) {
     document.getElementById("content").innerHTML =
-        '<p class="error">Không tìm thấy mã hóa đơn trong URL.</p>';
+        '<p class="error">❌ Không tìm thấy mã hóa đơn trong URL.</p>';
+    document.getElementById("invoice-code-display").textContent = "Không có mã";
 } else {
-    // ✅ Sửa đường dẫn: thêm ./ hoặc dùng đường dẫn tuyệt đối
+    document.getElementById("invoice-code-display").textContent = `Mã: ${code}`;
+    
     const jsonUrl = `./invoices/${code}.json`;
     
     fetch(jsonUrl)
@@ -84,28 +227,19 @@ if (!code) {
             return res.json();
         })
         .then(data => {
-            // Format số tiền
-            const formatMoney = (amount) => {
-                return new Intl.NumberFormat('vi-VN', {
-                    style: 'currency',
-                    currency: 'đ'
-                }).format(amount);
-            };
-
-            // Tạo bảng sản phẩm
             let itemsHTML = '';
             if (data.items && data.items.length > 0) {
                 itemsHTML = `
-                    <h3>Chi tiết sản phẩm:</h3>
+                    <div class="section-title">📦 Chi tiết sản phẩm</div>
                     <table>
                         <thead>
                             <tr>
-                                <th style="width: 10%;">STT</th>
-                                <th style="width: 40%;">Tên thuốc</th>
-                                <th style="width: 15%;">Hạn Thuốc</th>
+                                <th style="width: 8%;">STT</th>
+                                <th style="width: 32%;">Tên thuốc</th>
+                                <th style="width: 16%;">Hạn Thuốc</th>
                                 <th style="width: 10%;">SL</th>
-                                <th style="width: 15%;">Đơn giá</th>
-                                <th style="width: 15%;">Tổng</th>
+                                <th style="width: 17%;">Đơn giá</th>
+                                <th style="width: 17%;">Tổng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -114,12 +248,12 @@ if (!code) {
                 data.items.forEach((item, index) => {
                     itemsHTML += `
                         <tr>
-                            <td style="text-align: center;">${index + 1}</td>
-                            <td>${item.name}</td>
-                            <td style="text-align: center;">${item.expiry || ''}</td>
-                            <td style="text-align: center;">${item.quantity}</td>
-                            <td style="text-align: right;">${item.price.toLocaleString('vi-VN')} đ</td>
-                            <td style="text-align: right;">${item.total.toLocaleString('vi-VN')} đ</td>
+                            <td>${index + 1}</td>
+                            <td><strong>${item.name}</strong></td>
+                            <td>${item.expiry || 'N/A'}</td>
+                            <td><strong>${item.quantity}</strong></td>
+                            <td class="money-cell">${item.price.toLocaleString('vi-VN')} đ</td>
+                            <td class="money-cell"><strong>${item.total.toLocaleString('vi-VN')} đ</strong></td>
                         </tr>
                     `;
                 });
@@ -131,24 +265,38 @@ if (!code) {
             }
 
             document.getElementById("content").innerHTML = `
-                <p class="code">Mã hóa đơn: ${data.code}</p>
-                <div class="info">
-                    <p><span class="label">Ngày:</span> ${data.date}</p>
-                    <p><span class="label">Giờ:</span> ${data.time}</p>
-                    
-                    <p><span class="label">Khách hàng:</span> ${data.customer || 'Khách lẻ'}</p>
-                    <hr>
-                    ${itemsHTML}
-                    <hr>
-                    <p style="font-size: 18px; text-align: right;"><span class="label">Tổng cộng:</span> <strong>${data.total.toLocaleString('vi-VN')} đ</strong></p>
+                <div class="info-section">
+                    <div class="info-row">
+                        <div class="info-label">📅 Ngày:</div>
+                        <div class="info-value">${data.date}</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">⏰ Giờ:</div>
+                        <div class="info-value">${data.time}</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">👤 Khách hàng:</div>
+                        <div class="info-value">${data.customer || 'Khách lẻ'}</div>
+                    </div>
+                </div>
+                
+                ${itemsHTML}
+                
+                <div class="total-section">
+                    <div class="total-label">💰 Tổng cộng</div>
+                    <div class="total-amount">${data.total.toLocaleString('vi-VN')} đ</div>
+                </div>
+                
+                <div class="footer-note">
+                    ✅ Cảm ơn quý khách đã tin tưởng sử dụng dịch vụ của chúng tôi!
                 </div>
             `;
         })
         .catch(err => {
             console.error('Error:', err);
             document.getElementById("content").innerHTML =
-                `<p class="error">Không tìm thấy hóa đơn với mã: <strong>${code}</strong></p>
-                <p style="text-align: center; color: #666; font-size: 14px;">Vui lòng kiểm tra lại mã hóa đơn.</p>`;
+                `<p class="error">❌ Không tìm thấy hóa đơn với mã: <strong>${code}</strong></p>
+                <p style="text-align: center; color: #666; font-size: 14px; margin-top: 15px;">Vui lòng kiểm tra lại mã hóa đơn.</p>`;
         });
 }
 </script>
