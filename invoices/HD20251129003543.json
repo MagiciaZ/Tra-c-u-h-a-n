@@ -1,0 +1,17 @@
+{
+  "code": "HD20251129003543",
+  "date": "29/11/2025",
+  "time": "00:36",
+  "cashier": "Khang Lê",
+  "customer": "Khang",
+  "items": [
+    {
+      "name": "omgg",
+      "expiry": "30/10/2026",
+      "quantity": 2,
+      "price": 21000,
+      "total": 42000
+    }
+  ],
+  "total": 42000
+}
