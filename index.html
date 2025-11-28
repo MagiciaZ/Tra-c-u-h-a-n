@@ -124,7 +124,7 @@ table tbody tr:last-child td {
 }
 
 .money-cell {
-    text-align: right;
+    text-align: center;  
     font-weight: 500;
     color: #0066cc;
 }
@@ -252,8 +252,8 @@ if (!code) {
                             <td><strong>${item.name}</strong></td>
                             <td>${item.expiry || 'N/A'}</td>
                             <td><strong>${item.quantity}</strong></td>
-                            <td class="money-cell">${item.price.toLocaleString('vi-VN')} đ</td>
-                            <td class="money-cell"><strong>${item.total.toLocaleString('vi-VN')} đ</strong></td>
+                            <td style="text-align: center;">${item.price.toLocaleString('vi-VN')} đ</td>
+                            <td style="text-align: center;"><strong>${item.total.toLocaleString('vi-VN')} đ</strong></td>
                         </tr>
                     `;
                 });
