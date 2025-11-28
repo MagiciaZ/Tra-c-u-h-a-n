@@ -1,0 +1,17 @@
+{
+  "code": "HD20251128170822",
+  "date": "28/11/2025",
+  "time": "17:08",
+  "cashier": "Khang Lê",
+  "customer": "Khang",
+  "items": [
+    {
+      "name": "saiyanjin",
+      "expiry": "30/10/2027",
+      "quantity": 3,
+      "price": 23000,
+      "total": 69000
+    }
+  ],
+  "total": 69000
+}
