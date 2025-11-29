@@ -1,0 +1,18 @@
+{
+  "code": "HD20251129204156",
+  "date": "29/11/2025",
+  "time": "20:42",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phongg",
+  "customer": "fesa",
+  "items": [
+    {
+      "name": "omgg",
+      "expiry": "30/10/2026",
+      "quantity": 3,
+      "price": 21000,
+      "total": 63000
+    }
+  ],
+  "total": 63000
+}
