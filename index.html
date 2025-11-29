@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>Tra cứu hóa đơn</title>
 <style>
 * {
@@ -15,12 +15,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
-    padding: 20px;
+    padding: 10px;
 }
 
 .container {
     max-width: 800px;
-    margin: 40px auto;
+    margin: 20px auto;
     background: white;
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
@@ -30,40 +30,41 @@ body {
 .header {
     background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
     color: white;
-    padding: 30px;
+    padding: 20px 15px;
     text-align: center;
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .invoice-code {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     background: rgba(255, 255, 255, 0.2);
-    padding: 12px 20px;
+    padding: 10px 15px;
     border-radius: 8px;
     display: inline-block;
 }
 
 .content {
-    padding: 30px;
+    padding: 15px;
 }
 
 .info-section {
     background: #f8f9fa;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .info-row {
     display: flex;
-    padding: 10px 0;
+    padding: 8px 0;
     border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
 }
 
 .info-row:last-child {
@@ -73,27 +74,38 @@ h1 {
 .info-label {
     font-weight: 600;
     color: #555;
-    width: 120px;
+    min-width: 110px;
+    flex-shrink: 0;
 }
 
 .info-value {
     color: #333;
     flex: 1;
+    word-break: break-word;
 }
 
 .section-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     color: #333;
-    margin: 25px 0 15px 0;
-    padding-bottom: 10px;
+    margin: 20px 0 12px 0;
+    padding-bottom: 8px;
     border-bottom: 2px solid #0066cc;
+}
+
+/* ✅ BẢN MOBILE - TABLE CUỘN NGANG */
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -15px;
+    padding: 0 15px;
 }
 
 table {
     width: 100%;
+    min-width: 550px; /* Đảm bảo đủ rộng */
     border-collapse: collapse;
-    margin-top: 15px;
+    margin-top: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
     overflow: hidden;
@@ -102,17 +114,19 @@ table {
 table th {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 14px 10px;
+    padding: 12px 8px;
     text-align: center;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
+    white-space: nowrap;
 }
 
 table td {
-    padding: 14px 10px;
+    padding: 12px 8px;
     text-align: center;
     border-bottom: 1px solid #e0e0e0;
     color: #333;
+    font-size: 13px;
 }
 
 table tbody tr:hover {
@@ -123,10 +137,12 @@ table tbody tr:last-child td {
     border-bottom: none;
 }
 
+/* ✅ CỘT TIỀN CĂN PHẢI */
 .money-cell {
-    text-align: center;  
+    text-align: right !important;
     font-weight: 500;
     color: #0066cc;
+    padding-right: 10px !important;
 }
 
 .total-section {
@@ -134,8 +150,8 @@ table tbody tr:last-child td {
     color: white;
     padding: 20px;
     border-radius: 10px;
-    margin-top: 25px;
-    text-align: right;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .total-label {
@@ -144,14 +160,14 @@ table tbody tr:last-child td {
 }
 
 .total-amount {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
 }
 
 .loading, .error {
     text-align: center;
-    padding: 60px 20px;
-    font-size: 16px;
+    padding: 40px 20px;
+    font-size: 15px;
 }
 
 .loading {
@@ -165,31 +181,69 @@ table tbody tr:last-child td {
 .footer-note {
     text-align: center;
     color: #888;
-    font-size: 13px;
-    margin-top: 30px;
-    padding-top: 20px;
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 15px;
     border-top: 1px solid #e0e0e0;
 }
 
-@media (max-width: 600px) {
+/* ✅ RESPONSIVE CHO DESKTOP */
+@media (min-width: 768px) {
     .container {
-        margin: 20px auto;
+        margin: 40px auto;
     }
     
     h1 {
-        font-size: 22px;
+        font-size: 28px;
     }
     
     .invoice-code {
-        font-size: 16px;
+        font-size: 20px;
+        padding: 12px 20px;
+    }
+    
+    .content {
+        padding: 30px;
+    }
+    
+    .info-section {
+        padding: 20px;
+    }
+    
+    .info-row {
+        font-size: 15px;
+        padding: 10px 0;
+    }
+    
+    .info-label {
+        width: 130px;
+    }
+    
+    .section-title {
+        font-size: 18px;
+        margin: 25px 0 15px 0;
+    }
+    
+    .table-wrapper {
+        margin: 0;
+        padding: 0;
     }
     
     table {
-        font-size: 13px;
+        min-width: auto;
     }
     
     table th, table td {
-        padding: 10px 6px;
+        padding: 14px 10px;
+        font-size: 14px;
+    }
+    
+    .total-section {
+        text-align: right;
+    }
+    
+    .total-amount {
+        font-size: 28px;
     }
 }
 </style>
@@ -231,18 +285,19 @@ if (!code) {
             if (data.items && data.items.length > 0) {
                 itemsHTML = `
                     <div class="section-title">📦 Chi tiết sản phẩm</div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="width: 8%;">STT</th>
-                                <th style="width: 32%;">Tên thuốc</th>
-                                <th style="width: 16%;">Hạn Thuốc</th>
-                                <th style="width: 10%;">SL</th>
-                                <th style="width: 17%;">Đơn giá</th>
-                                <th style="width: 17%;">Tổng</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width: 50px;">STT</th>
+                                    <th style="width: 150px;">Tên thuốc</th>
+                                    <th style="width: 100px;">Hạn Thuốc</th>
+                                    <th style="width: 50px;">SL</th>
+                                    <th style="width: 100px;">Đơn giá</th>
+                                    <th style="width: 100px;">Tổng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                 `;
                 
                 data.items.forEach((item, index) => {
@@ -252,15 +307,16 @@ if (!code) {
                             <td><strong>${item.name}</strong></td>
                             <td>${item.expiry || 'N/A'}</td>
                             <td><strong>${item.quantity}</strong></td>
-                            <td style="text-align: center;">${item.price.toLocaleString('vi-VN')} đ</td>
-                            <td style="text-align: center;"><strong>${item.total.toLocaleString('vi-VN')} đ</strong></td>
+                            <td class="money-cell">${item.price.toLocaleString('vi-VN')} đ</td>
+                            <td class="money-cell"><strong>${item.total.toLocaleString('vi-VN')} đ</strong></td>
                         </tr>
                     `;
                 });
                 
                 itemsHTML += `
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 `;
             }
 
@@ -282,7 +338,7 @@ if (!code) {
                         <div class="info-label">⚕️ Bác sĩ kê đơn:</div>
                         <div class="info-value">${data.doctor || 'N/A'}</div>
                     </div>
-                        <div class="info-row">
+                    <div class="info-row">
                         <div class="info-label">👨‍⚕️ NV bán hàng:</div>
                         <div class="info-value">${data.staff || 'N/A'}</div>
                     </div>
@@ -296,7 +352,7 @@ if (!code) {
                 </div>
                 
                 <div class="footer-note">
-                     Cảm ơn quý khách đã tin tưởng sử dụng dịch vụ của chúng tôi!
+                    ✅ Cảm ơn quý khách đã tin tưởng sử dụng dịch vụ!
                 </div>
             `;
         })
