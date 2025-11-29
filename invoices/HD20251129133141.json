@@ -1,0 +1,18 @@
+{
+  "code": "HD20251129133141",
+  "date": "29/11/2025",
+  "time": "13:32",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. dung",
+  "customer": "yuan",
+  "items": [
+    {
+      "name": "omgg",
+      "expiry": "30/10/2026",
+      "quantity": 1,
+      "price": 21000,
+      "total": 21000
+    }
+  ],
+  "total": 21000
+}
