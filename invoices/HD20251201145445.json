@@ -1,0 +1,18 @@
+{
+  "code": "HD20251201145445",
+  "date": "01/12/2025",
+  "time": "14:54",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "cdc",
+  "items": [
+    {
+      "name": "vitamin D",
+      "expiry": "30/12/2026",
+      "quantity": 2,
+      "price": 50000,
+      "total": 100000
+    }
+  ],
+  "total": 100000
+}
