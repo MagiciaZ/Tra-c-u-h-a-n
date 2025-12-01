@@ -1,0 +1,25 @@
+{
+  "code": "HD20251201142309",
+  "date": "01/12/2025",
+  "time": "14:23",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "sèaesf",
+  "items": [
+    {
+      "name": "omgg",
+      "expiry": "30/10/2026",
+      "quantity": 4,
+      "price": 21000,
+      "total": 84000
+    },
+    {
+      "name": "omgg",
+      "expiry": "30/10/2026",
+      "quantity": 2,
+      "price": 21000,
+      "total": 42000
+    }
+  ],
+  "total": 126000
+}
