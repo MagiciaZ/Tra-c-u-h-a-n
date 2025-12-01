@@ -1,0 +1,18 @@
+{
+  "code": "HD20251201144151",
+  "date": "01/12/2025",
+  "time": "14:42",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "fssfd",
+  "items": [
+    {
+      "name": "saiyanjin",
+      "expiry": "30/10/2027",
+      "quantity": 32,
+      "price": 23000,
+      "total": 736000
+    }
+  ],
+  "total": 736000
+}
