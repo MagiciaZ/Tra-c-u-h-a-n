@@ -1,0 +1,18 @@
+{
+  "code": "HD20251201144859",
+  "date": "01/12/2025",
+  "time": "14:49",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "ádas",
+  "items": [
+    {
+      "name": "omgg",
+      "expiry": "30/10/2026",
+      "quantity": 12,
+      "price": 21000,
+      "total": 252000
+    }
+  ],
+  "total": 252000
+}
