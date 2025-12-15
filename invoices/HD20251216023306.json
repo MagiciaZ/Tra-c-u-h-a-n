@@ -1,0 +1,25 @@
+{
+  "code": "HD20251216023306",
+  "date": "16/12/2025",
+  "time": "02:33",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "hoang",
+  "items": [
+    {
+      "name": "Soliris",
+      "expiry": "05/12/2028",
+      "quantity": 2,
+      "price": 20000,
+      "total": 40000
+    },
+    {
+      "name": "Spevigo",
+      "expiry": "05/12/2028",
+      "quantity": 1,
+      "price": 25000,
+      "total": 25000
+    }
+  ],
+  "total": 65000
+}
