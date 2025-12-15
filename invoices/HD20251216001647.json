@@ -1,0 +1,18 @@
+{
+  "code": "HD20251216001647",
+  "date": "16/12/2025",
+  "time": "00:16",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "aaaaaaaaaaaaaaaa",
+  "items": [
+    {
+      "name": "Darzalex SC",
+      "expiry": "05/12/2028",
+      "quantity": 1,
+      "price": 40000,
+      "total": 40000
+    }
+  ],
+  "total": 40000
+}
