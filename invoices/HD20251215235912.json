@@ -1,0 +1,18 @@
+{
+  "code": "HD20251215235912",
+  "date": "15/12/2025",
+  "time": "23:59",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "edx",
+  "items": [
+    {
+      "name": "Forsteo",
+      "expiry": "05/12/2028",
+      "quantity": 2,
+      "price": 30000,
+      "total": 60000
+    }
+  ],
+  "total": 100000
+}
