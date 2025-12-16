@@ -11,11 +11,25 @@
     box-sizing: border-box;
 }
 
+/* ✅ THEME PHARMACY */
+:root{
+    --primary: #0F766E;     /* teal */
+    --primary-2: #16A34A;   /* green */
+    --primary-3: #0EA5A5;   /* cyan-teal */
+    --bg-1: #E6FFFA;        /* very light teal */
+    --bg-2: #F0FDF4;        /* very light green */
+    --text: #0F172A;        /* slate */
+    --muted: #475569;       /* slate soft */
+    --border: #E2E8F0;
+    --money: #15803D;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
     min-height: 100vh;
     padding: 10px;
+    color: var(--text);
 }
 
 .container {
@@ -23,12 +37,13 @@ body {
     margin: 20px auto;
     background: white;
     border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
     overflow: hidden;
+    border: 1px solid rgba(15,118,110,0.10);
 }
 
 .header {
-    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
     color: white;
     padding: 20px 15px;
     text-align: center;
@@ -36,17 +51,18 @@ body {
 
 h1 {
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 12px;
 }
 
 .invoice-code {
     font-size: 16px;
-    font-weight: 600;
-    background: rgba(255, 255, 255, 0.2);
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.18);
     padding: 10px 15px;
-    border-radius: 8px;
+    border-radius: 10px;
     display: inline-block;
+    backdrop-filter: blur(4px);
 }
 
 .content {
@@ -54,17 +70,18 @@ h1 {
 }
 
 .info-section {
-    background: #f8f9fa;
+    background: #F8FFFD;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 20px;
+    border: 1px solid rgba(15,118,110,0.15);
 }
 
 .info-row {
     display: flex;
     align-items: center;
     padding: 10px 0;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border);
     font-size: 14px;
 }
 
@@ -73,8 +90,8 @@ h1 {
 }
 
 .info-label {
-    font-weight: 600;
-    color: #555;
+    font-weight: 700;
+    color: var(--muted);
     min-width: 130px;
     flex-shrink: 0;
     display: flex;
@@ -83,18 +100,18 @@ h1 {
 }
 
 .info-value {
-    color: #333;
+    color: var(--text);
     flex: 1;
     word-break: break-word;
 }
 
 .section-title {
     font-size: 16px;
-    font-weight: 600;
-    color: #333;
+    font-weight: 800;
+    color: #0b2f2a;
     margin: 20px 0 12px 0;
     padding-bottom: 8px;
-    border-bottom: 2px solid #0066cc;
+    border-bottom: 2px solid var(--primary);
 }
 
 /* ✅ BẢN MOBILE - TABLE CUỘN NGANG */
@@ -107,20 +124,21 @@ h1 {
 
 table {
     width: 100%;
-    min-width: 550px; /* Đảm bảo đủ rộng */
+    min-width: 550px;
     border-collapse: collapse;
     margin-top: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
     overflow: hidden;
+    border: 1px solid rgba(15,118,110,0.12);
 }
 
 table th {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-3) 100%);
     color: white;
     padding: 12px 8px;
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 13px;
     white-space: nowrap;
 }
@@ -128,13 +146,13 @@ table th {
 table td {
     padding: 12px 8px;
     text-align: center;
-    border-bottom: 1px solid #e0e0e0;
-    color: #333;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
     font-size: 13px;
 }
 
 table tbody tr:hover {
-    background-color: #f5f7ff;
+    background-color: rgba(15,118,110,0.06);
 }
 
 table tbody tr:last-child td {
@@ -144,28 +162,30 @@ table tbody tr:last-child td {
 /* ✅ CỘT TIỀN CĂN PHẢI */
 .money-cell {
     text-align: right !important;
-    font-weight: 500;
-    color: #0066cc;
+    font-weight: 700;
+    color: var(--money);
     padding-right: 10px !important;
 }
 
 .total-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
     color: white;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     margin-top: 20px;
     text-align: center;
+    box-shadow: 0 10px 24px rgba(15,118,110,0.18);
 }
 
 .total-label {
     font-size: 16px;
     margin-bottom: 8px;
+    opacity: 0.95;
 }
 
 .total-amount {
     font-size: 26px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .loading, .error {
@@ -175,20 +195,20 @@ table tbody tr:last-child td {
 }
 
 .loading {
-    color: #666;
+    color: var(--muted);
 }
 
 .error {
-    color: #cc0000;
+    color: #B91C1C;
 }
 
 .footer-note {
     text-align: center;
-    color: #888;
+    color: #64748B;
     font-size: 12px;
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--border);
 }
 
 /* ✅ RESPONSIVE CHO DESKTOP */
@@ -196,56 +216,56 @@ table tbody tr:last-child td {
     .container {
         margin: 40px auto;
     }
-    
+
     h1 {
         font-size: 28px;
     }
-    
+
     .invoice-code {
         font-size: 20px;
         padding: 12px 20px;
     }
-    
+
     .content {
         padding: 30px;
     }
-    
+
     .info-section {
         padding: 20px;
     }
-    
+
     .info-row {
         font-size: 15px;
         padding: 10px 0;
     }
-    
+
     .info-label {
         width: 130px;
     }
-    
+
     .section-title {
         font-size: 18px;
         margin: 25px 0 15px 0;
     }
-    
+
     .table-wrapper {
         margin: 0;
         padding: 0;
     }
-    
+
     table {
         min-width: auto;
     }
-    
+
     table th, table td {
         padding: 14px 10px;
         font-size: 14px;
     }
-    
+
     .total-section {
         text-align: right;
     }
-    
+
     .total-amount {
         font-size: 28px;
     }
@@ -258,7 +278,7 @@ table tbody tr:last-child td {
         <h1>🏥 Tra cứu hóa đơn nhà thuốc</h1>
         <div class="invoice-code" id="invoice-code-display">Đang tải...</div>
     </div>
-    
+
     <div class="content" id="content">
         <p class="loading">⏳ Đang tải dữ liệu...</p>
     </div>
@@ -274,9 +294,9 @@ if (!code) {
     document.getElementById("invoice-code-display").textContent = "Không có mã";
 } else {
     document.getElementById("invoice-code-display").textContent = `Mã: ${code}`;
-    
+
     const jsonUrl = `./invoices/${code}.json`;
-    
+
     fetch(jsonUrl)
         .then(res => {
             if (!res.ok) {
@@ -303,7 +323,7 @@ if (!code) {
                             </thead>
                             <tbody>
                 `;
-                
+
                 data.items.forEach((item, index) => {
                     itemsHTML += `
                         <tr>
@@ -316,7 +336,7 @@ if (!code) {
                         </tr>
                     `;
                 });
-                
+
                 itemsHTML += `
                             </tbody>
                         </table>
@@ -347,14 +367,14 @@ if (!code) {
                         <div class="info-value">${data.staff || 'N/A'}</div>
                     </div>
                 </div>
-                
+
                 ${itemsHTML}
-                
+
                 <div class="total-section">
                     <div class="total-label">Tổng cộng</div>
                     <div class="total-amount">${data.total.toLocaleString('vi-VN')} đ</div>
                 </div>
-                
+
                 <div class="footer-note">
                      Cảm ơn quý khách đã tin tưởng sử dụng dịch vụ!
                 </div>
