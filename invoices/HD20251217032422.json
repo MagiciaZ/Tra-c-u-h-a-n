@@ -1,0 +1,18 @@
+{
+  "code": "HD20251217032422",
+  "date": "17/12/2025",
+  "time": "03:24",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "ádas",
+  "items": [
+    {
+      "name": "Trofentyl",
+      "expiry": "16/12/2027",
+      "quantity": 1,
+      "price": 10000,
+      "total": 10000
+    }
+  ],
+  "total": 10000
+}
