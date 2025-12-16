@@ -1,0 +1,18 @@
+{
+  "code": "HD20251217031829",
+  "date": "17/12/2025",
+  "time": "03:18",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "edcaxwa",
+  "items": [
+    {
+      "name": "Saphnelo",
+      "expiry": "05/12/2028",
+      "quantity": 1,
+      "price": 30000,
+      "total": 30000
+    }
+  ],
+  "total": 30000
+}
