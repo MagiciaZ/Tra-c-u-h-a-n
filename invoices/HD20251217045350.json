@@ -1,0 +1,18 @@
+{
+  "code": "HD20251217045350",
+  "date": "17/12/2025",
+  "time": "04:54",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "ádfghj",
+  "items": [
+    {
+      "name": "Ruxience",
+      "expiry": "05/12/2028",
+      "quantity": 1,
+      "price": 20000,
+      "total": 20000
+    }
+  ],
+  "total": 20000
+}
