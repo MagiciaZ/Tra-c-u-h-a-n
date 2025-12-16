@@ -288,7 +288,7 @@ if (!code) {
             let itemsHTML = '';
             if (data.items && data.items.length > 0) {
                 itemsHTML = `
-                    <div class="section-title">📦 Chi tiết sản phẩm</div>
+                    <div class="section-title">Chi tiết sản phẩm</div>
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -327,23 +327,23 @@ if (!code) {
             document.getElementById("content").innerHTML = `
                 <div class="info-section">
                     <div class="info-row">
-                        <div class="info-label">📅 Ngày:</div>
+                        <div class="info-label">Ngày:</div>
                         <div class="info-value">${data.date}</div>
                     </div>
                     <div class="info-row">
-                        <div class="info-label">⏰ Giờ:</div>
+                        <div class="info-label">Giờ:</div>
                         <div class="info-value">${data.time}</div>
                     </div>
                     <div class="info-row">
-                        <div class="info-label">👤 Khách hàng:</div>
+                        <div class="info-label">Khách hàng:</div>
                         <div class="info-value">${data.customer || 'Khách lẻ'}</div>
                     </div>
                     <div class="info-row">
-                        <div class="info-label">⚕️ Bác sĩ kê đơn:</div>
+                        <div class="info-label">Bác sĩ kê đơn:</div>
                         <div class="info-value">${data.doctor || 'N/A'}</div>
                     </div>
                     <div class="info-row">
-                        <div class="info-label">👨‍⚕️ NV bán hàng:</div>
+                        <div class="info-label">NV bán hàng:</div>
                         <div class="info-value">${data.staff || 'N/A'}</div>
                     </div>
                 </div>
@@ -351,7 +351,7 @@ if (!code) {
                 ${itemsHTML}
                 
                 <div class="total-section">
-                    <div class="total-label">💰 Tổng cộng</div>
+                    <div class="total-label">Tổng cộng</div>
                     <div class="total-amount">${data.total.toLocaleString('vi-VN')} đ</div>
                 </div>
                 
