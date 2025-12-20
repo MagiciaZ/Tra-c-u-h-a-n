@@ -1,0 +1,46 @@
+{
+  "code": "HD20251221014329",
+  "date": "21/12/2025",
+  "time": "01:43",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "ai biết",
+  "items": [
+    {
+      "name": "Darzalex SC",
+      "expiry": "05/12/2028",
+      "quantity": 3,
+      "price": 40000,
+      "total": 120000
+    },
+    {
+      "name": "Trofentyl",
+      "expiry": "16/12/2027",
+      "quantity": 2,
+      "price": 10000,
+      "total": 20000
+    },
+    {
+      "name": "LinaGlo-5",
+      "expiry": "30/10/2027",
+      "quantity": 1,
+      "price": 32000,
+      "total": 32000
+    },
+    {
+      "name": "Aerobidol inhaler",
+      "expiry": "17/12/2028",
+      "quantity": 1,
+      "price": 16000,
+      "total": 16000
+    },
+    {
+      "name": "Cilzec Plus",
+      "expiry": "17/12/2028",
+      "quantity": 1,
+      "price": 45000,
+      "total": 45000
+    }
+  ],
+  "total": 233000
+}
