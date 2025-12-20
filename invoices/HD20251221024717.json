@@ -1,0 +1,25 @@
+{
+  "code": "HD20251221024717",
+  "date": "21/12/2025",
+  "time": "02:48",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "sadasda",
+  "items": [
+    {
+      "name": "I-Brinz Sterile Eye Drops",
+      "expiry": "16/12/2028",
+      "quantity": 1,
+      "price": 30000,
+      "total": 30000
+    },
+    {
+      "name": "Rosuna-10",
+      "expiry": "17/12/2028",
+      "quantity": 12,
+      "price": 15000,
+      "total": 180000
+    }
+  ],
+  "total": 210000
+}
