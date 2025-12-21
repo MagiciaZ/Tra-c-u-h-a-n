@@ -1,0 +1,32 @@
+{
+  "code": "HD20251221165734",
+  "date": "21/12/2025",
+  "time": "16:57",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "dũawaxaw",
+  "items": [
+    {
+      "name": "Trofentyl",
+      "expiry": "16/12/2027",
+      "quantity": 2,
+      "price": 10000,
+      "total": 20000
+    },
+    {
+      "name": "Covance 50 mg",
+      "expiry": "16/12/2028",
+      "quantity": 2,
+      "price": 20000,
+      "total": 40000
+    },
+    {
+      "name": "Tiglor",
+      "expiry": "17/12/2029",
+      "quantity": 1,
+      "price": 34000,
+      "total": 34000
+    }
+  ],
+  "total": 94000
+}
