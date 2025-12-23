@@ -1,0 +1,18 @@
+{
+  "code": "HD20251223081801",
+  "date": "23/12/2025",
+  "time": "08:18",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "phong123",
+  "items": [
+    {
+      "name": "Soliris",
+      "expiry": "05/12/2028",
+      "quantity": 30,
+      "price": 20000,
+      "total": 600000
+    }
+  ],
+  "total": 600000
+}
