@@ -1,0 +1,18 @@
+{
+  "code": "HD20251223071930",
+  "date": "23/12/2025",
+  "time": "07:19",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "sdfgfd",
+  "items": [
+    {
+      "name": "Spevigo",
+      "expiry": "05/12/2028",
+      "quantity": 1,
+      "price": 25000,
+      "total": 25000
+    }
+  ],
+  "total": 25000
+}
