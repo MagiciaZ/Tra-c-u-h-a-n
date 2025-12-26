@@ -1,0 +1,25 @@
+{
+  "code": "HD20251226151339",
+  "date": "26/12/2025",
+  "time": "15:14",
+  "doctor": "BS. Lê Quốc Khang",
+  "staff": "DS. Nguyễn Ðình Phong",
+  "customer": "Lưu Huyền Đức",
+  "items": [
+    {
+      "name": "Spevigo",
+      "expiry": "05/12/2028",
+      "quantity": 2,
+      "price": 25000,
+      "total": 50000
+    },
+    {
+      "name": "LinaGlo-5",
+      "expiry": "30/10/2027",
+      "quantity": 3,
+      "price": 32000,
+      "total": 96000
+    }
+  ],
+  "total": 146000
+}
